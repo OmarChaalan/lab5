@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email and Password Validation</title>
+
+    <script>
+      let email = prompt("Please Enter your Email:");
+      while (true) {
+        if (email.indexOf(" ") !== -1) {
+          email = prompt(
+            "Email should not contain spaces. Please enter a valid email:"
+          );
+          continue;
+        }
+
+        if (email.indexOf("@") === -1 || email.indexOf("@") === 0) {
+          email = prompt(
+            "Email should contain @ symbol and it shouldn't be at the beginning. Please try again:"
+          );
+          continue;
+        }
+
+        alert(":) Your Email is Valid: " + email);
+        break;
+      }
+
+      document.write(`<input type="email" value="${email}">`);
+
+      let password = prompt(
+        "Please Enter your Password should be ( 6-12 characters long )"
+      );
+
+      while (true) {
+        if (password.length > 12 || password.length < 6) {
+          password = prompt(
+            "Password should be 6-12 characters long. Please Try Again:"
+          );
+          continue;
+        }
+
+        var hasNumber = false;
+        var hasCapitalLetter = false;
+
+        for (var i = 0; i < password.length; i++) {
+          var char = password[i];
+          if (char >= "0" && char <= "9") {
+            hasNumber = true;
+          } else if (char >= "A" && char <= "Z") {
+            hasCapitalLetter = true;
+          }
+        }
+
+        if (!hasNumber || !hasCapitalLetter) {
+          password = prompt(
+            "Invalid password. Please Try Again! Please enter a valid password (The Password should contain at least 1 number and 1 capital letter):"
+          );
+          continue;
+        }
+
+        alert("Your Password is Valid :) : " + password);
+
+        alert(
+          "Your Email is: " + email + "\n" + "Your Password is: " + password
+        );
+        break;
+      }
+
+      document.write(`<input type="password" value="${password}">`);
+    </script>
+  </head>
+</html>

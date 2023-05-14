@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Gallery</title>
+    <script>
+      var imageCount = parseInt(
+        prompt("Please enter ow many Images you want to add to the gallery? :)")
+      );
+
+      for (var i = 0; i < imageCount; i++) {
+        var imageURL = prompt(
+          "Please Enter the Image source or the URL for image " + (i + 1)
+        );
+
+        document.write('<img src="' + imageURL + '">');
+      }
+    </script>
+  </head>
+</html>
